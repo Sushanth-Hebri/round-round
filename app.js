@@ -9,6 +9,7 @@ const ejs = require("ejs");
 require('dotenv').config();
 
 
+
 const app = express();
 const port = 3000;
 
@@ -153,30 +154,30 @@ app.get("/signout", (req, res) => {
   });
 });
 
-// Handle signup form submission
-app.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+// // Handle signup form submission
+// app.post("/signup", async (req, res) => {
+//   const { email, password } = req.body;
 
-  try {
-    // Hash the password before saving it
-    const hashedPassword = await bcrypt.hash(password, 10);
+//   try {
+//     // Hash the password before saving it
+//     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user
-    const newUser = new User({
-      email,
-      password: hashedPassword,
-    });
+//     // Create a new user
+//     const newUser = new User({
+//       email,
+//       password: hashedPassword,
+//     });
 
-    // Save the user to the database
-    await newUser.save();
+//     // Save the user to the database
+//     await newUser.save();
 
-    // Redirect to home.html after successful signup
-    res.redirect("/signin");
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Error registering user");
-  }
-});
+//     // Redirect to home.html after successful signup
+//     res.redirect("/signin");
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send("Error registering user");
+//   }
+// });
 
 // Handle signin form submission
 app.post("/signin", async (req, res) => {
@@ -302,13 +303,28 @@ app.get('/api/user/email', (req, res) => {
 
 
 
+// Handle signup form submission
+app.post("/signup", async (req, res) => {
+  const { email, password } = req.body;
 
+  try {
+ 
+    const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Create a new user with email and hashed password
+    const newUser = new User({
+      email,
+      password: hashedPassword,
+    });
 
-
-
-
-
+    // Save the user to the database
+    await newUser.save();
+    res.redirect("/signin"); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error registering user");
+  }
+});
 
 
 
