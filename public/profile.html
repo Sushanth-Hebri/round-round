@@ -51,6 +51,20 @@
             width: 100%;
             object-fit: cover;
         }
+        .signout-box{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .signout{
+            text-decoration: none;
+            color: blue;
+        }
+        .signout:hover{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +76,10 @@
             <h2 id="username">Loading...</h2>
             <p class="profile-email" id="user-email">Loading. s..</p>
         </div>
+        <div class="signout-box">
+            <a href="/signout" class="signout">Sign Out</a>
+        </div>
+        
     </div>
 
     <script>
