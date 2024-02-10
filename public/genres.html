@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            overflow: hidden;
+        }
+        video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .row1, .row2 {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+.row1 h1{
+    padding: 10px;
+    font-size: 3rem;
+    color: white;
+}
+        .row-in {
+            width: 90%;
+            height: 60%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .genz {
+            position: relative;
+  width: 16%;
+  height: 80%;
+  background-color: green;
+  margin: 0 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px 3px rgb(76, 71, 141);
+  transition: background-image 0.5s ease;
+        }
+.genz:hover{
+    cursor: pointer;
+
+}
+        .card-name::after {
+            content: attr(data-card-name);
+            color: white;
+            width: 100%;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .genz img {
+            position: absolute;
+            bottom: -17px;
+            right: -2px;
+            width: 100px; /* Adjust size as needed */
+            height: 90px; /* Adjust size as needed */
+            border-radius: 5px;
+            transform: rotate(-30deg);
+        }
+        .science-fiction{
+          background:   linear-gradient(135deg, #00bcd4, #1f344b);
+        }
+        .fantasy{
+            background:  linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+        }
+        .mystery{
+            background:linear-gradient(135deg, #0f0c29, #302b63, #24243e) ;
+        }
+        .romance{
+            background: linear-gradient(135deg, #ff7e5f, #d5dd47);
+        }
+        .adventure{
+            background: linear-gradient(135deg, #007991, #78ffd6);
+        }
+        .thriller{
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+        }
+        .historical-fiction{
+            background: linear-gradient(135deg, #d98022, #b39f45);
+        }
+        .dystopian{
+            background: linear-gradient(135deg, #af6ce2, #8ca6db);
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted>
+        <source src="assets/genre-bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <div class="row1">
+            <h1>Genres</h1>
+            <div class="row-in">
+                <div class="genz science-fiction" data-genre="science-fiction" onclick="navigateToGenrePage(this)">
+                    <img src="assets/1.jpg" alt="">
+                    <div class="card-name" data-card-name="Science Fiction"></div>
+                </div>
+                <div class="genz fantasy" data-genre="fantacy" onclick="navigateToGenrePage(this)">
+                    <img src="assets/2.png" alt="">
+                    <div class="card-name" data-card-name="Fantasy"></div>
+                </div>
+                <div class="genz mystery" onmouseover="startHoverAnimation(this)" onmouseout="stopHoverAnimation(this)">
+                    <img src="assets/3.jpg" alt="">
+                    <div class="card-name" data-card-name="Mystery"></div>
+                </div>
+                <div class="genz romance">
+                    <img src="assets/4.png" alt="">
+                    <div class="card-name" data-card-name="Romance"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="row-in">
+                <div class="genz adventure">
+                    <img src="assets/5.jpg" alt="">
+                    <div class="card-name" data-card-name="Adventure"></div>
+                </div>
+                <div class="genz thriller">
+                    <img src="assets/6.jpg" alt="">
+                    <div class="card-name" data-card-name="Thriller"></div>
+                </div>
+                <div class="genz historical-fiction">
+                    <img src="assets/7.jpg" alt="">
+                    <div class="card-name" data-card-name="Historical Fiction"></div>
+                </div>
+                <div class="genz dystopian">
+                    <img src="assets/8.jpg" alt="">
+                    <div class="card-name" data-card-name="Dystopian"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateToGenrePage(element) {
+            var genre = element.getAttribute('data-genre');
+            window.location.href = 'genre/' + genre;
+        }
+    </script>
+    </script>
+</body>
+</html>

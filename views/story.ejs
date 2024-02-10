@@ -1,0 +1,541 @@
+<!-- story.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Page</title>
+    <link rel="icon" href="../assets/logo.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            background-color: rebeccapurple;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .box1 {
+            width: 30%;
+            height: 100%;
+            /* background-color: #bababa; */
+            background: linear-gradient(to bottom,rgb(242 243 248), #b3d9ff, #3366cc);
+  background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box2 {
+            width: 50%;
+            height: 100%;
+            /* background-color: #bababa; */
+            background: linear-gradient(to bottom,rgb(242 243 248), #b3d9ff, #3366cc);
+  background-size: cover;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.771);
+        }
+ 
+        .box3 {
+            width: 20%;
+            height: 100%;
+            /* background-color: #bababa; */
+            background: linear-gradient(to bottom,rgb(242 243 248), #b3d9ff, #3366cc);
+  background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 3px 3px black;
+        }
+
+        #story-container {
+            display: none;
+        }
+
+        .story-title {
+            padding: 7px;
+            color: black;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .story-description {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .story-script {
+            font-size: 16px;
+            /* color: #666; */
+            
+            margin-top: 10px;
+        }
+
+        .story-rating {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .card {
+            width: 300px;
+            min-width: 300px;
+            height: auto;
+            background: #fff;
+            border-radius: 30px;
+            position: relative;
+            z-index: 10;
+            margin: 25px;
+            min-height: 356px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0px 17px 35px 0px rgba(0, 0, 0, 0.07);
+        }
+
+        .card h4 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 15px;
+            color: rgb(41, 41, 41);
+        }
+
+        .card i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 15px;
+            font-size: 1.4rem;
+            line-height: 3.2rem;
+        }
+
+        .card .card-text {
+            padding: 20px;
+        }
+
+        p {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            color: black;
+        }
+
+        .card-img {
+            height: 90%;
+            width: 100%;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img img {
+            height: 160px;
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        .card img.blur {
+            position: absolute;
+            filter: blur(15px);
+            z-index: -1;
+            opacity: 0.4;
+            transform: translate(-160px, 30px);
+            transition: all 0.35s ease-out;
+        }
+
+        .card-text h2 {
+            color: black;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .script-box {
+            height: 100%;
+            width: 95%;
+            overflow-y: scroll;
+            font-size: 16px;
+            color: #090808;
+            text-align: center;
+            line-height: 2.3;
+            font-size: 1.2rem;
+            white-space: pre-line;
+        }
+
+        .script-box::-webkit-scrollbar {
+            width: 0;
+        }
+        .option{
+            height: 90%;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+        }
+        .agent{
+            height: 40px;
+            width: 60%;
+            background-color: blue;
+            border-radius: 10px;
+
+        }
+        .option{
+            border-radius: 10px;
+ 
+          height: 90%;
+          width: 80%;
+          background-color: blue;  
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          box-shadow: 2px 2px 3px 3px rgba(55, 55, 55, 0.771);
+        }
+        .agent {
+            height: 90px;
+            width: 60%;
+            background-color: #ffffff47;
+            color: rgb(207, 206, 206);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .lang{
+            color: rgb(207, 206, 206);
+            height: 40px;
+            width: 60%;
+            background-color: #ffffff47;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+  }
+
+  .switch:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+
+  input:checked + .switch {
+    background-color: #171717; /* Change this color when the switch is on */
+  }
+
+  input:checked + .switch:before {
+    transform: translateX(26px);
+  }
+
+  .toggle-label {
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+      
+
+
+
+
+  .popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 13, 13, 0.892);
+  text-align: center;
+  z-index: 1000;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.logo-div{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30%;
+    width: 34%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+.story-title-2{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(190, 190, 190, 0.908);
+    text-shadow: 2px 2px 3px black;
+    background-color: #090808;
+    padding: 8px;
+    border-radius: 5px;
+}
+.popup-logo {
+  max-width: 30%;
+  max-height: 30%;
+  
+}
+
+.background-sound {
+  display: none;
+}
+    </style>
+</head>
+<body>
+    <!-- welocme -->
+    <div class="popup-container">
+        <div class="logo-div">
+            <img src="assets/logo.png" alt="Your Logo" class="popup-logo">
+            <h5>Now playing..</h5>
+            <div class="story-title-2"></div>
+        </div>
+        
+        <audio class="background-sound" loop>
+          <source src="/assets/sweet-transition-153787.mp3" type="audio/mp3">
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+
+
+
+
+
+
+    <div class="container">
+        <div class="box box1">
+            <div class="card" story_id="1">
+                <h4 id="rating"></h4>
+                <div class="card-img">
+                    <img src="" alt="story" />
+                </div>
+                <div class="card-text">
+                    <h2 id="title"></h2>
+                    <p id="description">
+                    
+                    </p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="box box2">
+            <div class="story-title"></div>
+            <div id="script" class="script-box"></div>
+        </div>
+        <div class="box box3">
+            <div class="option">
+                <div class="agent" id="agent">
+                    Reading Agent
+                    <div class="toggle-switch">
+                      <input type="checkbox" id="agentToggle" onclick="toggleReadForMe()">
+                      <label for="agentToggle" class="switch"></label>
+                    </div>
+                  </div>
+                  
+                <div class="lang" onclick="changeLanguage()" >language</div>
+
+            </div>
+        </div>
+
+        <div id="story-container" data-story='<%- JSON.stringify(story) %>'></div>
+
+        <!-- Add your JavaScript to process the embedded JSON data -->
+        <script>
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const storyContainer = document.getElementById("story-container");
+                const storyDataString = storyContainer.getAttribute("data-story");
+
+
+
+
+                if (storyDataString) {
+                    try {
+                        const storyData = JSON.parse(storyDataString);
+                        document.getElementById("script").innerHTML = storyData.story_script;
+                        document.getElementsByClassName("story-title")[0].innerHTML = storyData.story_title;
+                        document.getElementsByClassName("story-title-2")[0].innerHTML = storyData.story_title;
+
+                        document.getElementById('script').innerHTML = storyData.story_script;
+                        document.getElementById('rating').innerHTML = storyData.rating;
+                        document.getElementById('title').innerHTML = storyData.story_title;
+                        document.getElementById('description').innerHTML = storyData.description;
+
+                    } catch (error) {
+                        console.error("Error parsing JSON:", error);
+                        storyContainer.innerHTML = "<p>Error parsing story data.</p>";
+                    }
+                } else {
+                    storyContainer.innerHTML = "<p>No story data available.</p>";
+                }
+            });
+
+
+        </script>
+<script>
+    let isReading = false;
+    let utterance;
+
+    function readText() {
+        const scriptBox = document.getElementById("script");
+        const textToRead = scriptBox.innerText;
+
+        if (textToRead) {
+            const chunks = splitTextIntoChunks(textToRead, 200); // Adjust the chunk size as needed
+
+            if (isReading) {
+                // If already reading, stop the speech
+                speechSynthesis.cancel();
+                isReading = false;
+            } else {
+                // If not reading, start the speech with a specific voice
+                isReading = true;
+                playChunks(chunks);
+            }
+        }
+    }
+
+    function playChunks(chunks) {
+        if (chunks.length === 0) {
+            isReading = false;
+            return;
+        }
+
+        const currentChunk = chunks.shift();
+        utterance = new SpeechSynthesisUtterance(currentChunk);
+        const voices = speechSynthesis.getVoices();
+        const googleUKFemaleVoice = voices.find(voice => voice.name === 'Google UK English Female');
+
+        // Use the specific voice if available, otherwise, use the default voice
+        utterance.voice = googleUKFemaleVoice || voices[0];
+
+        // Adjust pitch (you can experiment with different values)
+        utterance.pitch = 1.2; // Higher pitch
+
+        // Continue to the next chunk after the current one is finished
+        utterance.onend = () => playChunks(chunks);
+
+        speechSynthesis.speak(utterance);
+    }
+
+    function splitTextIntoChunks(text, chunkSize) {
+        const regex = new RegExp(`.{1,${chunkSize}}`, 'g');
+        return text.match(regex) || [];
+    }
+
+    function toggleReadForMe() {
+        readText();
+    }
+
+    // Stop speech when leaving the page
+    window.addEventListener('beforeunload', () => {
+        if (isReading) {
+            speechSynthesis.cancel();
+        }
+    });
+
+    // Ensure voices are loaded before the user interacts with the page
+    window.addEventListener('DOMContentLoaded', () => {
+        speechSynthesis.onvoiceschanged = () => {
+            // Now the voices are loaded and you can use readText function
+        };
+    });
+</script>
+<!-- Inside your script tag or in a separate JavaScript file -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the story_id from the URL query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const storyId = urlParams.get('story_id');
+  
+      
+      const cardImg = document.querySelector('.card-img img');
+  
+      if (storyId) {
+        // Set the image source based on the story_id
+        const imageUrl = `assets/${storyId}.png`;
+        cardImg.src = imageUrl;
+        console.log(imageUrl);
+      } else {
+        console.error('Story ID not found in the URL');
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const popupContainer = document.querySelector(".popup-container");
+  const backgroundSound = document.querySelector(".background-sound");
+
+  // Show popup
+  popupContainer.style.display = "block";
+  backgroundSound.play();
+
+  // Hide popup after 4 seconds
+  setTimeout(function() {
+    popupContainer.style.display = "none";
+    backgroundSound.pause();
+  }, 4000);
+});
+
+  </script>
+
+
+    </div>
+</body>
+</html>

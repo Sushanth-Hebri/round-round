@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Story Site - Home</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/javascript/index.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <div class="logo">
+      <div class="logo-in">
+        <div class="logo-img">
+          <img src="/assets/logo.png" alt="logo" />
+        </div>
+        <div class="login-signup">
+          <div class="login">
+            <a href="/signin">Login</a>
+          </div>
+          <div class="signup">
+            <a href="/signup">Signup</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-name">ROUND & ROUND</div>
+    <div class="subtitle">
+      A Story telling platform for all age groups, <br />
+      So no more boring days.
+    </div>
+
+    <div class="listen">
+      <!-- <div class="listennow"></div> -->
+      <button class="glowing-btn" onclick="gotosignup()">
+        <span class="glowing-txt"
+          >L<span class="faulty-letter">I</span>STEN</span
+        >
+      </button>
+    </div>
+
+  
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/2.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/1.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/1.jpg" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/2.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/2.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/1.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/2.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="/assets/out.png" height="100" width="100" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="tagline">
+      <div class="tagline-in-one">
+        <div class="light">
+          <img src="assets/bulb.png" alt="">
+        </div>
+        <div class="light">
+          <img src="assets/bulb.png" alt="">
+        </div>
+      </div>
+      <div class="tagline-in">Captivating stories with reading agent</div>
+    </div>
+ <br> <br>
+    <div class="quality">
+      <div class="q-left">
+        <p>High  Quality </p>
+        <p>Visuals</p>
+      </div>
+      <div class="q-right">
+        <div class="q-img1">
+          <div class="q1">
+<img src="/assets/out.png" alt="">
+          </div>
+        </div>
+        <div class="q-img2">
+          <div class="q2">
+<img src="/assets/2.png" alt="">
+          </div>
+        </div>
+        <div class="q-img3">
+          <div class="q3">
+<img src="/assets/1.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about">
+      <div class="about-in">
+        <div class="about-card">
+          <div class="about-card-content">
+            <div class="about-card-title">Our Storytelling Journey</div>
+            <div class="about-card-description">
+              <p>Welcome to our storytelling haven! Here at Round & Round, we embark on magical journeys through the art of storytelling.</p>
+              <p>Immerse yourself in enchanting tales, explore diverse worlds, and experience the power of words that bring stories to life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Round & Round. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

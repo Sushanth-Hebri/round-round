@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f4f4f4; */
+         background-color: #3366ccba;
+            
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: linear-gradient(to bottom, #ffffff, #b3d9ff, #3366cc);
+            background-size: cover;
+            padding: 20px;
+            box-shadow: 1px 1px 15px 1px rgba(15, 15, 15, 0.685);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            text-align: center;
+        }
+
+        .profile-email {
+            color: #555;
+            margin-top: 10px;
+        }
+        .back{
+            height: 30px;
+            width: 30px;
+        }
+        .back:hover{
+            cursor: pointer;
+        }
+        .back img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="back" onclick="goBack()"><img src="assets/arrow-back.svg" alt=""></div>
+        <div class="profile-details">
+            <img src="/assets/2.png" alt="Profile Picture" class="profile-pic">
+            <h2 id="username">Loading...</h2>
+            <p class="profile-email" id="user-email">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch the email from the server
+            fetch('/api/user/email')
+                .then(response => response.json())
+                .then(data => {
+                    const email = data.email;
+
+                    // Update the email in the document
+                    const emailParagraph = document.getElementById("user-email");
+                    emailParagraph.textContent = email;
+
+                    // Extract the username from the email (only before the dot)
+                    const username = email.split(".")[0];
+
+                    // Update the username in the document
+                    const usernameHeading = document.getElementById("username");
+                    usernameHeading.textContent = username;
+                })
+                .catch(error => {
+                    console.error('Error fetching email:', error);
+                });
+        });
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

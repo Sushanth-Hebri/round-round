@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Story Site - Home</title>
+    <link rel="stylesheet" href="/css/home.css" />
+    <script src="/javascript/home.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="about">
+          <div class="logo">
+            <img src="/assets/logo.png" alt="" />
+          </div>
+        </a>
+        <a href="#genrePopup" class="links toggle-popup">Genres</a>
+        <a href="/contact" class="links">Subscribe</a>
+        <a href="/profile" class="links">Profile</a>
+      </nav>
+    </header>
+
+    <br />
+
+    <div class="genre-popup" id="genrePopup">
+      <div class="genre-popup-in">
+        <div class="genre-row">
+          <div class="genre-box" data-genre="Sci-Fi">Sci-Fi</div>
+          <div class="genre-box" data-genre="Romance">Romance</div>
+          <div class="genre-box" data-genre="Comedy">Comedy</div>
+          <div class="genre-box" data-genre="Suspense">Suspense</div>
+        </div>
+        <div class="genre-row">
+          <div class="genre-box" data-genre="Cartoon">Cartoon</div>
+          <div class="genre-box" data-genre="Mystery">Mystery</div>
+          <div class="genre-box" data-genre="Drama">Drama</div>
+          <div class="genre-box" data-genre="Special">Special</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider">
+      <button id="prev" class="btn prev">
+        <i class="las la-angle-left"></i>
+      </button>
+      <div class="card-content">
+        <!-- Card -->
+        <div class="card" story_id="1">
+          <h4>4.2</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/1.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Timeless Echoes: A Journey to the Past</h2>
+            <p>
+              In "Timeless Echoes: A Journey to the Past," As she navigates the
+              challenges of the past, she discovers a world of secrets, love,
+              and the profound impact of choices.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card" story_id="2">
+          <h4>4.4</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Mystical Cat</h2>
+            <p>
+              Luna, the mystical cat in Whispering Pines, holds secrets in her
+              gaze. Kids think she understands wishes; elders sense wisdom. With
+              nightly disappearances into ancient woods, Luna's mystique grows.
+            </p>
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card" story_id="3">
+          <h4>4.6</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/3.jpg" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Ephemeral Echoes</h2>
+            <p>A lost love's letters reveal secrets beyond the grave</p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.2</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Blue Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.1</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Green Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.5</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Red Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+      </div>
+      <button id="next" class="btn next">
+        <i class="las la-angle-right"></i>
+      </button>
+    </div>
+
+    <div class="slider">
+      <button id="prev" class="btn prev">
+        <i class="las la-angle-left"></i>
+      </button>
+      <div class="card-content">
+        <!-- Card -->
+        <div class="card">
+          <h4>4.5</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Basket Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.4</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Volley Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.7</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Disco Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.2</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Blue Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.1</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Green Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.5</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Red Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+      </div>
+      <button id="next" class="btn next">
+        <i class="las la-angle-right"></i>
+      </button>
+    </div>
+
+    <div class="slider">
+      <button id="prev" class="btn prev">
+        <i class="las la-angle-left"></i>
+      </button>
+      <div class="card-content">
+        <!-- Card -->
+        <div class="card">
+          <h4>4.5</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Basket Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.4</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Volley Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.7</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Disco Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.2</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Blue Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.1</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Green Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+
+        <!-- Card -->
+        <div class="card">
+          <h4>4.5</h4>
+          <i class="lar la-heart"></i>
+          <div class="card-img">
+            <img src="assets/2.png" alt="story" />
+          </div>
+          <div class="card-text">
+            <h2>Red Ball</h2>
+            <p>
+              I show you how to make a card group easily and very functional
+              with the use of flexbox and its magic and JavaScript.
+            </p>
+            <p></p>
+          </div>
+        </div>
+        <!-- Card End -->
+      </div>
+      <button id="next" class="btn next">
+        <i class="las la-angle-right"></i>
+      </button>
+    </div>
+    <div class="genre-name-container">
+      <div id="genre-name"></div>
+    </div>
+
+    <div id="sushanth"></div>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+
+  function redirectToStoryPage(storyId) {
+    window.location.href = `story?story_id=${storyId}`;
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const storyId = this.getAttribute("story_id");
+      redirectToStoryPage(storyId);
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("sushanth");
+
+        // Handle click events using event delegation
+        container.addEventListener("click", function (event) {
+          const card = event.target.closest(".card");
+          if (card) {
+            const storyId = card.getAttribute("story_id");
+            redirectToStoryPage(storyId);
+          }
+        });
+
+        function redirectToStoryPage(storyId) {
+          window.location.href = `story?story_id=${storyId}`;
+        }
+
+        document.querySelectorAll(".genre-box").forEach(function (box) {
+          box.addEventListener("click", function () {
+            var genre = this.getAttribute("data-genre");
+            console.log("Selected genre:", genre);
+            const genrename = document.getElementById("genre-name");
+            genrename.innerHTML = "Genre - " + genre;
+            genrename.style.display = "block";
+
+            // Scroll to the element with id "genre-name"
+            genrename.scrollIntoView({
+              behavior: "smooth",
+            });
+
+            // Send a request to app.js (server) with the selected genre
+            fetch("/api/genre", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ genre: genre }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log("Data received from server:", data);
+
+                // Extract the array of stories from updatedContent
+                const storiesArray = data.updatedContent;
+
+                // Clear existing content in the container
+                container.innerHTML = "";
+
+                // Check if there are stories in the array
+                if (storiesArray.length > 0) {
+                  // Initialize a variable to keep track of the number of cards
+                  let cardCount = 0;
+
+                  // Iterate through each story in the array
+                  storiesArray.forEach((story) => {
+                    // Check if a new 'gen-row' div needs to be created
+                    if (cardCount % 3 === 0) {
+                      // Create a new 'gen-row' div
+                      const genRow = document.createElement("div");
+                      genRow.className = "gen-row";
+                      container.appendChild(genRow);
+                    }
+
+                    // Create a new div element for the story
+                    const storyElement = document.createElement("div");
+                    storyElement.className = "card";
+
+                    // Add HTML content for the story using extracted properties
+                    storyElement.innerHTML = `
+                                      <h4>${story.rating}</h4>
+                                      <i class="lar la-heart"></i>
+                                      <div class="card-img">
+                                          <img src="assets/${story.story_id}.png" alt="story" />
+                                      </div>
+                                      <div class="card-text">
+                                          <h2>${story.story_title}</h2>
+                                          <p>${story.description}</p>
+                                      </div>
+                                  `;
+
+                    // Set story_id as an attribute to the storyElement
+                    storyElement.setAttribute("story_id", story.story_id);
+
+                    // Append the story element to the last 'gen-row' div
+                    const genRows = document.querySelectorAll(".gen-row");
+                    const lastGenRow = genRows[genRows.length - 1];
+                    lastGenRow.appendChild(storyElement);
+
+                    // Increment the card count
+                    cardCount++;
+                  });
+
+                  container.style.display = "block";
+
+                  // Scroll to the element with id "genre-name"
+                  genrename.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                } else {
+                  // Handle the case when there are no stories
+                  container.innerHTML = "No stories available";
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          });
+        });
+      });
+    </script>
+    <script>
+      document
+        .querySelector(".toggle-popup")
+        .addEventListener("click", function (event) {
+          const genrePopup = document.getElementById("genrePopup");
+
+          // Prevent the default behavior of the anchor link (preventing the hash from being added to the URL)
+          event.preventDefault();
+
+          // Toggle the display property between 'none' and 'block'
+          genrePopup.style.display =
+            genrePopup.style.display === "none" ||
+            genrePopup.style.display === ""
+              ? "block"
+              : "none";
+        });
+
+      document.addEventListener("click", function (event) {
+        const genrePopup = document.getElementById("genrePopup");
+        const toggleLink = document.querySelector(".toggle-popup");
+        const genreBoxes = document.querySelectorAll(".genre-box");
+
+        // Check if the click target is not within the genre-popup, toggle link, or genre-box
+        if (
+          !genrePopup.contains(event.target) &&
+          !toggleLink.contains(event.target) &&
+          !isGenreBox(event.target)
+        ) {
+          genrePopup.style.display = "none";
+        }
+      });
+
+      function isGenreBox(target) {
+        // Check if the target or any of its ancestors has the 'genre-box' class
+        return (
+          target.classList.contains("genre-box") ||
+          target.closest(".genre-box") !== null
+        );
+      }
+
+      // Add event listeners to each genre-box
+      document.querySelectorAll(".genre-box").forEach(function (box) {
+        box.addEventListener("click", function () {
+          const genrePopup = document.getElementById("genrePopup");
+          // Close the genre-popup when a genre-box is clicked
+          genrePopup.style.display = "none";
+
+          // Perform other actions related to the clicked genre-box if needed
+          const selectedGenre = this.getAttribute("data-genre");
+          console.log("Selected genre:", selectedGenre);
+        });
+      });
+    </script>
+  </body>
+</html>
