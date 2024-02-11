@@ -74,6 +74,10 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "public" });
 });
 
+// Serve the admin.html page
+app.get("/admin", (req, res) => {
+  res.sendFile("admin.html", { root: "public" });
+});
 // Serve signup.html
 app.get("/signup", (req, res) => {
   res.sendFile("signup.html", { root: "public" });
@@ -325,6 +329,43 @@ app.post("/signup", async (req, res) => {
     res.status(500).send("Error registering user");
   }
 });
+
+
+
+
+
+// Add a new story to the database
+app.post("/add-story", async (req, res) => {
+  const { story_id, story_title, description, rating, story_script, genre } = req.body;
+
+  try {
+    const newStory = new Story({
+      story_id,
+      story_title,
+      description,
+      rating,
+      story_script,
+      genre,
+    });
+
+    await newStory.save();
+    res.send("Story added successfully!");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error adding story");
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
