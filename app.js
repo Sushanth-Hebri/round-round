@@ -78,6 +78,11 @@ app.get("/", (req, res) => {
 app.get("/admin", (req, res) => {
   res.sendFile("admin.html", { root: "public" });
 });
+
+app.get("/subscribe", (req, res) => {
+  res.sendFile("subscribe.html", { root: "public" });
+});
+
 // Serve signup.html
 app.get("/signup", (req, res) => {
   res.sendFile("signup.html", { root: "public" });
