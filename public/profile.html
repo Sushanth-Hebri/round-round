@@ -79,7 +79,7 @@
         <div class="signout-box">
             <a href="/signout" class="signout">Sign Out</a>
         </div>
-        
+         <button onclick="validateHuman()">Validate Human</button>
     </div>
 
     <script>
@@ -105,6 +105,41 @@
                     console.error('Error fetching email:', error);
                 });
         });
+
+function validateHuman() {
+            // Get the image file from an input element or any other source
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*'; // Accept image files only
+            fileInput.onchange = function(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                // Create form data to send the image
+                const formData = new FormData();
+                formData.append('file', file);
+
+                // Send the image to the specified URL
+                fetch('https://sushanthhebri.pythonanywhere.com/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the response from the server
+                    console.log('Response from server:', data);
+                    alert('Prediction: ' + data.predicted_class);
+                })
+                .catch(error => {
+                    console.error('Error sending image:', error);
+                    alert('Error sending image. Please try again.');
+                });
+            };
+
+            fileInput.click(); // Trigger the file input click event
+        }
+
+        
         function goBack() {
             window.history.back();
         }
